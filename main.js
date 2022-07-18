@@ -12,18 +12,7 @@
     let geoJSONLayer = null;
 
     const runFetch = () => {
-        fetch('https://opensky-network.org/api/states/all', {
-            //Source: https://stackoverflow.com/questions/45781924/how-to-pass-credentials-through-a-fetch-request
-                method: 'GET',
-                credentials: 'same-origin',
-                redirect: 'follow',
-                agent: null,
-                headers: {
-                    "Content-Type": "text/plain",
-                    'Authorization': 'Basic ' + btoa('minth1123:NSH59aYm!pgA4XB'),
-                },
-                timeout: 5000
-        })
+        fetch('https://opensky-network.org/api/states/all')
         .then(response => response.json())
         .then(data => {
             var planeIcon = L.icon({
